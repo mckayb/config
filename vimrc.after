@@ -3,7 +3,11 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+set tabstop=4
+set softtabstop=0 expandtab shiftwidth=4 smarttab
 au Bufread *.php set ft=php.html
 au BufNewFile *.php set ft=php.html
 au Bufread *.vue,*.json,*.lock set ft=javascript
 au BufNewFile *.vue,*.json,*.lock set ft=javascript
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/dist/*
