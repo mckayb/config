@@ -3,11 +3,13 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-set tabstop=4
-set softtabstop=0 expandtab shiftwidth=4 smarttab
-au Bufread *.php set ft=php.html
-au BufNewFile *.php set ft=php.html
-au Bufread *.vue,*.json,*.lock set ft=javascript
-au BufNewFile *.vue,*.json,*.lock set ft=javascript
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4
+au Bufread,BufNewFile *.php set ft=php.html
+au Bufread,BufNewFile *.vue,*.json,*.lock set ft=javascript
+autocmd! BufNewFile,BufReadPre,FileReadPre *.php so ~/.vim-settings/php.vim
+autocmd! BufNewFile,BufReadPre,FileReadPre *.js so ~/.vim-settings/javascript.vim
+set listchars=tab:>·,space:·
+set list
+hi SpecialKey ctermfg=darkgray guifg=gray
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/dist/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/dist/*,*/node_modules/*
