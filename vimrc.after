@@ -10,6 +10,7 @@ autocmd! BufNewFile,BufReadPre,FileReadPre *.php so ~/.vim-settings/php.vim
 autocmd! BufNewFile,BufReadPre,FileReadPre *.js so ~/.vim-settings/javascript.vim
 set listchars=tab:>·,space:·
 set list
+set mouse=a
 hi SpecialKey ctermfg=darkgray guifg=gray
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/dist/*,*/node_modules/*
